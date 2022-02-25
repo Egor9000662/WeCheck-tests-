@@ -1,0 +1,160 @@
+
+  [
+    {
+       "id":100690,
+       "brand":"braun",
+       "seller":"OOO Вайлдберис",
+       "shop":"FBO, FBS, Retailn",
+       "rating":1.5,
+       "order":{
+          "units":{
+            "week":"234 678",
+            "month":"125 856",
+            "period":"85 675"
+          },
+          "dollors":{
+            "week":"123 402 11 ₽",
+            "month":"123 402 11 ₽",
+            "period":"123 402 11 ₽"
+          }
+       },
+       "medium":{
+         "units":{
+          "perDay":"11 123",
+          "thisDay":"55 222"
+         },
+         "dollors":{
+          "perDay":"88 747 ₽",
+          "thisDay":"78 888 ₽"
+         }
+       },
+       "features":{
+          "units":{
+             "rejection":"45 484",
+             "potential":"33 185"
+            },
+            "dollors":{
+             "rejection":"54 845 ₽",
+             "potential":"88 151 ₽"
+            }
+       },
+       "leftovers":{
+          "units":{
+             "inStock":"84 333",
+             "sales":"11 255"
+            },
+            "dollors":{
+             "inStock":"87 852 ₽",
+             "sales":"78 215 ₽"
+            }
+ 
+       }
+    
+
+
+
+    },
+    {
+       "id":100691,
+       "brand":"Nike",
+       "seller":"Blue Ribbon Sports",
+       "shop":"Retalin, Florida",
+       "rating":3.4,
+       "order":{
+         "units":{
+           "week":"239 656",
+           "month":"143 556",
+           "period":"69 675"
+         },
+         "dollors":{
+           "week":"123 402 11 ₽",
+           "month":"123 402 11 ₽",
+           "period":"123 402 11 ₽"
+         }
+      },
+      "medium":{
+        "units":{
+         "perDay":"11 123",
+         "thisDay":"55 222"
+        },
+        "dollors":{
+         "perDay":"88 747 ₽",
+         "thisDay":"78 888 ₽"
+        }
+      },
+      "features":{
+         "units":{
+            "rejection":"45 484",
+            "potential":"33 185"
+           },
+           "dollors":{
+            "rejection":"54 845 ₽",
+            "potential":"88 151 ₽"
+           }
+      },
+      "leftovers":{
+         "units":{
+            "inStock":"84 333",
+            "sales":"11 255"
+           },
+           "dollors":{
+            "inStock":"87 852 ₽",
+            "sales":"78 215 ₽"
+           }
+
+      }
+
+
+    },
+    
+    {
+       "id":100692,
+       "brand":"Adidas",
+       "seller":"OOO Адидас",
+       "shop":"FBO, FBK,Mexico ",
+       "rating":4.6,
+       "order":{
+         "units":{
+            "week":"234 678",
+            "month":"125 856",
+            "period":"85 675"
+         },
+         "dollors":{
+           "week":"123 402 11 ₽",
+           "month":"123 402 11 ₽",
+           "period":"123 402 11 ₽"
+         }
+      },
+      "medium":{
+         "units":{
+          "perDay":"11 123",
+          "thisDay":"55 222"
+         },
+         "dollors":{
+          "perDay":"88 747 ₽",
+          "thisDay":"78 888 ₽"
+         }
+       },
+       "features":{
+          "units":{
+             "rejection":"45 484",
+             "potential":"33 185"
+            },
+            "dollors":{
+             "rejection":"54 845 ₽",
+             "potential":"88 151 ₽"
+            }
+       },
+       "leftovers":{
+          "units":{
+             "inStock":"84 333",
+             "sales":"11 255"
+            },
+            "dollors":{
+             "inStock":"87 852 ₽",
+             "sales":"78 215 ₽"
+            }
+ 
+       }
+    }
+ ]

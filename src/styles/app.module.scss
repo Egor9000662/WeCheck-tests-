@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  font-family: "Roboto";
+  nav {
+    margin-bottom: 32px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    a {
+      font-size: 14px;
+      text-decoration: none;
+      margin-right: 24px;
+      color: #828282;
+      text-align: center;
+      height: 63px;
+      display: flex;
+      align-items: center;
+    }
+    .link {
+      color: #219653;
+      font-weight: 700;
+      border-top: 2px #219653 solid;
+    }
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.logo {
+  width: 145px;
+  height: 63px;
+  margin-right: 32px;
+}

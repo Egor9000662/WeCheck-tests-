@@ -1,0 +1,56 @@
+.header_item {
+    display: flex;
+
+    .filter {
+        display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120.33%;
+      margin-bottom: 15px;
+      div {
+        
+        display: inline-block;
+        color: #858585;
+        
+      }
+      .link {
+        margin-right: 10px;
+      }
+      :first-child{
+          margin-right: 15px;
+      }
+    }
+  }
+  .month,
+  .week,
+  .period {
+    display: flex;
+    height: 42px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);;
+    div {
+      flex-grow: 1;
+      text-align: end;
+      color: #111111;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+    }
+    p{
+        font-size: 14px;
+        line-height: 120%; 
+        color: #858585;
+    }
+  }
+  .period{
+    border: none;
+}
+.active{
+  background-color:#F1FCF6 ;
+   
+}
+.none{
+   border:none
+}
