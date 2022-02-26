@@ -1,49 +1,47 @@
 import React, { useState } from "react";
 import styles from "./items.module.scss";
-import Tooltip from "./toooltip";
 
-function ItemLeftovers({ props }) {
+function OrderItem(props) {
   const { product } = props;
   const [flag, setFlag] = useState(false);
 
-  if (!product) {
-    return null;
-  }
-
-  let amount =
-    flag === true ? product.leftovers.units : product.leftovers.dollors;
+  let amount = flag === true ? product.order.units : product.order.dollars;
   let bgUnits = flag === true ? "active" : "none";
   let bgRub = flag === false ? "active" : "none";
 
   const getUnits = () => {
     setFlag(true);
   };
-  const getDollors = () => {
+  const getDollars = () => {
     setFlag(false);
   };
 
   return (
     <>
       <div className={styles.header_item}>
-        <p>Остатки</p>
+        <p>Заказы</p>
         <div className={styles.filter}>
           <div onClick={getUnits} className={styles[bgUnits]}>
             Шт
           </div>
-          <div onClick={getDollors} className={styles[bgRub]}>
+          <div onClick={getDollars} className={styles[bgRub]}>
             Руб
           </div>
         </div>
       </div>
       <div className={styles.week}>
-        <div className="">В наличии <Tooltip text='In Stock' /> </div>
-        <div>{amount.inStock}</div>
+        <p className={styles.title}>За 7 дней</p>
+        <div>{amount.week}</div>
       </div>
       <div className={styles.month}>
-        <div>С продажами <Tooltip text='Sales'/></div>
-        <div>{amount.sales}</div>
+        <p className={styles.title}>За 30 дней</p>
+        <div>{amount.month}</div>
+      </div>
+      <div className={styles.period}>
+        <p className={styles.title}>12 ноя - 30 дек</p>
+        <div>{amount.period}</div>
       </div>
     </>
   );
 }
-export default ItemLeftovers;
+export default OrderItem;

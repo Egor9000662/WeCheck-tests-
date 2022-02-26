@@ -6,15 +6,12 @@ import {
   NavLink,
 } from "react-router-dom";
 import "@fontsource/roboto";
-import ProductPage from "./pages/page";
+import ProductPage from "./pages/Product";
 import styles from "./styles/app.module.scss";
 import logo from "./assest/images/nav_logo.png";
 
 function App() {
   const [items, setItems] = useState([]);
-
-
-
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
@@ -37,7 +34,7 @@ function App() {
                   to={`/products/${item.id}`}
                   key={item.id}
                 >
-                  Товар <br /> {item.id}
+                  <div>Товар </div> {item.id}
                 </NavLink>
               );
             })}
@@ -48,9 +45,8 @@ function App() {
           <Route
             exact
             path="/products/:productId"
-            component={(props)=><ProductPage {...props} allProducts={items} />}
+            component={(props) => <ProductPage {...props} allProducts={items} />}
           />
-  
         </Switch>
       </Router>
     </div>

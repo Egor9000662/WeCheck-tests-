@@ -1,48 +1,49 @@
 import React, { useState } from "react";
 import styles from "./items.module.scss";
-import Tooltip from "./toooltip";
+import Tooltip from "./Tooltip";
 
-function ItemFeatures({ props }) {
+function LeftoversItem(props) {
   const { product } = props;
   const [flag, setFlag] = useState(false);
 
-  if (!product) {
-    return null;
-  }
-
-  let amount = flag === true ? product.features.units : product.features.dollors;
+  let amount =
+    flag === true ? product.leftovers.units : product.leftovers.dollars;
   let bgUnits = flag === true ? "active" : "none";
   let bgRub = flag === false ? "active" : "none";
 
   const getUnits = () => {
     setFlag(true);
   };
-  const getDollors = () => {
+  const getDollars = () => {
     setFlag(false);
   };
 
   return (
     <>
       <div className={styles.header_item}>
-        <p>Возможности</p>
+        <p>Остатки</p>
         <div className={styles.filter}>
           <div onClick={getUnits} className={styles[bgUnits]}>
             Шт
           </div>
-          <div onClick={getDollors} className={styles[bgRub]}>
+          <div onClick={getDollars} className={styles[bgRub]}>
             Руб
           </div>
         </div>
       </div>
       <div className={styles.week}>
-        <div className="">Упущенные заказы <Tooltip text='Rejection' /> </div>
-        <div>{amount.rejection}</div>
+        <div className={styles.title}>
+          В наличии <Tooltip text="In Stock" />{" "}
+        </div>
+        <div>{amount.inStock}</div>
       </div>
       <div className={styles.month}>
-        <div>Потенциал <Tooltip text='Potential' /></div>
-        <div>{amount.potential}</div>
+        <div className={styles.title}>
+          С продажами <Tooltip text="Sales" />
+        </div>
+        <div>{amount.sales}</div>
       </div>
     </>
   );
 }
-export default ItemFeatures;
+export default LeftoversItem;

@@ -1,22 +1,21 @@
-import React, { useState } from "react";
-import styles from "../styles/page.module.scss";
-import ItemOrder from "../components/itemOrder";
-import ItemMedium from "../components/itemMedium";
-import ItemFeatures from '../components/itemFeatures'
-import ItemLeftovers from '../components/itemLeftovers'
+import React from "react";
+import styles from "../styles/product.module.scss";
+import OrderItem from "../components/OrderItem";
+import AverageItem from "../components/AverageItem";
+import FeaturesItem from "../components/FeaturesItem";
+import LeftoversItem from "../components/LeftoversItem";
 
-
-function Page_home(props) {
+function ProductPage(props) {
   const { productId } = props.match.params;
-  const product = props.allProducts.find((product) => product.id == productId);
-
+  const product = props.allProducts.find(
+    (product) => product.id === Number(productId)
+  );
 
   if (!product) {
     return null;
   }
+  const widthRating = (product.rating / 5) * 100;
 
-  const widthRaiting  = (product.rating/5)*100
-  console.log(widthRaiting);
   return (
     <div className={styles.container}>
       <header>
@@ -26,38 +25,41 @@ function Page_home(props) {
           <div className={styles.box_price}>
             <div className={styles.price}>3 567 ₽</div>
             <div className={styles.reviews}>
-              <div className={styles.raiting_body}>
-                <div className={styles.raiting_active} style={{width: widthRaiting+"%"}}>
-                  <div className={styles.raiting_items}>
+              <div className={styles.rating_body}>
+                <div
+                  className={styles.rating_active}
+                  style={{ width: widthRating + "%" }}
+                >
+                  <div className={styles.rating_items}>
                     <input
-                      className={styles.raiting_item}
+                      className={styles.rating_item}
                       type="radio"
                       value="1"
-                      name="raiting"
+                      name="rating"
                     />
                     <input
-                      className={styles.raiting_item}
+                      className={styles.rating_item}
                       type="radio"
-                      value="1"
-                      name="raiting"
+                      value="2"
+                      name="rating"
                     />
                     <input
-                      className={styles.raiting_item}
+                      className={styles.rating_item}
                       type="radio"
-                      value="1"
-                      name="raiting"
+                      value="3"
+                      name="rating"
                     />
                     <input
-                      className={styles.raiting_item}
+                      className={styles.rating_item}
                       type="radio"
-                      value="1"
-                      name="raiting"
+                      value="4"
+                      name="rating"
                     />
                     <input
-                      className={styles.raiting_item}
+                      className={styles.rating_item}
                       type="radio"
-                      value="1"
-                      name="raiting"
+                      value="5"
+                      name="rating"
                     />
                   </div>
                 </div>
@@ -66,7 +68,7 @@ function Page_home(props) {
               </div>
               <p>521 отзыв</p>
             </div>
-            <div className={styles.update}>Обновлено 12 Ноя, 12:24</div>
+            <div className={styles.update}>Обновлено {product.date}</div>
           </div>
           <div className={styles.info}>
             <div className={styles.productId}>
@@ -89,22 +91,20 @@ function Page_home(props) {
       <main>
         <div className={styles.container_main}>
           <div className={styles.item}>
-            <ItemOrder props={{ product }} />
+            <OrderItem product={product} />
           </div>
           <div className={styles.item}>
-            <ItemMedium props={{ product }} />
+            <AverageItem product={product} />
           </div>
-           <div className={styles.item}>
-         <ItemFeatures props={{ product }} />
-          </div> 
           <div className={styles.item}>
-          <ItemLeftovers  props={{ product }}/>
+            <FeaturesItem product={product} />
+          </div>
+          <div className={styles.item}>
+            <LeftoversItem product={product} />
           </div>
         </div>
       </main>
-      
-
     </div>
   );
 }
-export default Page_home;
+export default ProductPage;
